@@ -22,9 +22,10 @@ function newCanvas() {
 }
 
 //drawing
-$(canvas).on("mousedown mouseover", function(e) {
+//using JQuery!
+$(canvas).on("mousedown mouseover dragover", function(e) {
     let colorChoice = document.getElementById("colorPicker").value;
-    if (e.buttons ==1 || e.buttons == 3) {
+    if (e.buttons == 1 || e.buttons == 3) {
         e.target.setAttribute("style", `background-color: ${colorChoice}; border: none;`);
     };
 });
