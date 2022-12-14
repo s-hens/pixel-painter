@@ -1,5 +1,6 @@
 const canvas = document.getElementById("canvas");
 
+//creating new canvas
 function newCanvas() {
     //delete old canvas
     canvas.textContent = ``;
@@ -19,3 +20,11 @@ function newCanvas() {
         gridCell.setAttribute("style", `height: ${cellSize}px; width: ${cellSize}px;`);
     }
 }
+
+//drawing
+$(canvas).on("mousedown mouseover", function(e) {
+    let colorChoice = document.getElementById("colorPicker").value;
+    if (e.buttons ==1 || e.buttons == 3) {
+        e.target.setAttribute("style", `background-color: ${colorChoice}; border: none;`);
+    };
+});
