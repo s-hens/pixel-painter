@@ -13,7 +13,9 @@ body {
 
 #drawingArea{
     background-color: #7F7F7F;
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #canvas {
@@ -23,9 +25,10 @@ body {
 }
 
 .gridCell {
-    margin: 0;
-    padding: 0;
     background-color: #FFFFFF;
-    border: 1px solid red;
+    border-left: 1px solid #7F7F7F;
+    border-bottom: 1px solid #7F7F7F;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
