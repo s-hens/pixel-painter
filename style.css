@@ -13,4 +13,19 @@ body {
 
 #drawingArea{
     background-color: #7F7F7F;
+    padding: 10px;
+}
+
+#canvas {
+    height: fit-content;
+    width: fit-content;
+    display: grid;
+}
+
+.gridCell {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    border: 1px solid red;
+    box-sizing: border-box;
 }
