@@ -8,12 +8,6 @@ body {
     font-family: 'Recursive', sans-serif;
 }
 
-#footer, #controlPanel {
-    background-color: #666666;
-    color: #FFFFFF;
-    padding: 10px;
-}
-
 #drawingArea{
     background-color: #7F7F7F;
     display: flex;
@@ -56,14 +50,22 @@ body {
     font-weight: 500;
 }
 
-.material-symbols-sharp {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 350,
-  'GRAD' 0,
-  'opsz' 48
+#controlPanel {
+    background-color: #666666;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+.material-icons-sharp.md-30 {
+    font-size: 30px;
 }
 
 #canvasSettings {
     display: none;
+}
+
+#footer {
+    background-color: #666666;
+    color: #FFFFFF;
+    padding: 10px;
 }

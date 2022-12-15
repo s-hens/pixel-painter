@@ -1,7 +1,7 @@
 //global elements
 const canvas = document.getElementById("canvas");
 
-//open "new canvas" settings popup
+//open "new canvas" settings div
 const openCanvasSettings = document.querySelector("#openCanvasSettings");
 
 openCanvasSettings.addEventListener("click", canvasSettingsWindow);
