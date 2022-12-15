@@ -1,6 +1,20 @@
 //global elements
 const canvas = document.getElementById("canvas");
 
+//open "new canvas" settings popup
+const openCanvasSettings = document.querySelector("#openCanvasSettings");
+
+openCanvasSettings.addEventListener("click", canvasSettingsWindow);
+
+function canvasSettingsWindow() {
+    const canvasSettings = document.getElementById("canvasSettings");
+    if (canvasSettings.style.display == "block") {
+        canvasSettings.style.display = "none";
+    } else {
+        canvasSettings.style.display = "block";
+    }
+}
+
 //create new canvas
 const newCanvasButton = document.querySelector("#newCanvasButton");
 
