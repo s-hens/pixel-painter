@@ -1,6 +1,11 @@
+//global elements
 const canvas = document.getElementById("canvas");
 
-//creating new canvas
+//create new canvas
+const newCanvasButton = document.querySelector("#newCanvasButton");
+
+newCanvasButton.addEventListener("click", newCanvas);
+
 function newCanvas() {
     //delete old canvas
     canvas.textContent = ``;
@@ -21,11 +26,20 @@ function newCanvas() {
     }
 }
 
-//drawing
+//draw
 //using JQuery!
 $(canvas).on("mousedown mouseover dragover", function(e) {
     let colorChoice = document.getElementById("colorPicker").value;
     if (e.buttons == 1 || e.buttons == 3) {
-        e.target.setAttribute("style", `background-color: ${colorChoice}; border: none;`);
+        e.target.setAttribute("style", `background-color: ${colorChoice};`);
     };
 });
+
+//toggle grid visibility
+const toggleGridButton = document.querySelector("#toggleGridButton");
+
+toggleGridButton.addEventListener("click", toggleGrid);
+
+function toggleGrid() {
+    canvas.childNodes.forEach(cell => cell.classList.toggle("gridBorderHidden"));
+}
