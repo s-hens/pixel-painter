@@ -26,8 +26,10 @@ function newCanvas() {
     //determine canvas dimensions from user input
     let width = document.getElementById("width").value;
     let height = document.getElementById("height").value;
-    let cellSize = document.getElementById("cellSize").value;
     let area = width * height;
+    //determine cell size from user input
+    //using JQuery!
+    let cellSize = $("input[type='radio'][name='cellSize']:checked").val();
     //apply canvas width to css grid
     timesToPrintAuto = Array(Number(width)).join("auto ");
     canvas.setAttribute("style", `grid-template-columns: ${timesToPrintAuto}auto;`);
