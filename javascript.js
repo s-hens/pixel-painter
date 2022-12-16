@@ -71,6 +71,13 @@ const toggleGridButton = document.querySelector("#toggleGridButton");
 toggleGridButton.addEventListener("click", toggleGrid);
 
 function toggleGrid() {
+    //toggle icon on button
+    if (toggleGridButton.innerHTML === (`<span class="material-icons-sharp md-24">grid_off</span> Toggle gridlines`)) {
+        toggleGridButton.innerHTML = (`<span class="material-icons-sharp md-24">grid_on</span> Toggle gridlines`);
+    } else {
+        toggleGridButton.innerHTML = (`<span class="material-icons-sharp md-24">grid_off</span> Toggle gridlines`);
+    }
+    //toggle the actual gridlines
     pixelCanvas.childNodes.forEach(cell => cell.classList.toggle("gridBorderHidden"));
 }
 

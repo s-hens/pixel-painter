@@ -22,10 +22,10 @@
         <span class="title1">Pixel</span><span class="title2">Painter</span>
     </div>
     <div id="controlPanel">
-        <span class="material-icons-sharp md-30">add_circle</span>
-        <span class="material-icons-sharp md-30">save</span>
-        <span class="material-icons-sharp md-30">palette</span>
-        <span class="material-icons-sharp md-30">grid_off</span>
+        <button id="openCanvasSettings"><span class="material-icons-sharp md-24">add_circle</span> New</button>
+        <button id="saveButton"><span class="material-icons-sharp md-24">save</span> Save</button>
+        <button id="toggleGridButton"><span class="material-icons-sharp md-24">grid_off</span> Toggle gridlines</button>
+        <span class="material-icons-sharp md-24">palette</span>
     </div>
     <div id="drawingArea">
         <div id="pixelCanvas"></div>
@@ -33,10 +33,6 @@
     <div id="footer">
 
     </div>
-
-<div id="newCanvasDiv">
-    <button id="openCanvasSettings">New Canvas</button>
-</div>
 
 <div id="canvasSettings">
     New Canvas<br>
@@ -52,14 +48,6 @@
 
 <div id="colorPickerDiv">
     <label for="colorPicker">Colour:</label> <input type="color" id="colorPicker" name="colorPicker">
-</div>
-
-<div id="toggleGridDiv">
-    <button id="toggleGridButton">Toggle grid visibility</button>
-</div>
-
-<div id="saveButtonDiv">
-    <button id="saveButton">Save</button>
 </div>
 
 <div id="saveImageDiv">
