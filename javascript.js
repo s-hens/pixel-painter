@@ -42,6 +42,20 @@ function newCanvas() {
     }
 }
 
+//enforce maximum canvas size
+//using JQuery!
+$(document.querySelector("#width")).on("change keyup paste", enforceRange);
+
+$(document.querySelector("#height")).on("change keyup paste", enforceRange);
+
+function enforceRange() {
+    if (this.value > 50) {
+        this.value = 50;
+    } else if (this.value < 2) {
+        this.value = 2;
+    }
+}
+
 //draw
 //using JQuery!
 $(canvas).on("mousedown mouseover dragover", function(e) {
