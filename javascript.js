@@ -73,3 +73,14 @@ toggleGridButton.addEventListener("click", toggleGrid);
 function toggleGrid() {
     canvas.childNodes.forEach(cell => cell.classList.toggle("gridBorderHidden"));
 }
+
+//save drawing
+const saveButton = document.querySelector("#saveButton");
+
+saveButton.addEventListener("click", saveCanvas);
+
+function saveCanvas() {
+    html2canvas(canvas).then(function (canvas) {
+        document.getElementById("saveImageDiv").appendChild(canvas);
+})
+}
