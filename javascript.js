@@ -1,5 +1,5 @@
 //global elements
-const canvas = document.getElementById("canvas");
+const pixelCanvas = document.getElementById("pixelCanvas");
 
 //open "new canvas" settings div
 const openCanvasSettings = document.querySelector("#openCanvasSettings");
@@ -21,8 +21,8 @@ const newCanvasButton = document.querySelector("#newCanvasButton");
 newCanvasButton.addEventListener("click", newCanvas);
 
 function newCanvas() {
-    //delete old canvas
-    canvas.textContent = ``;
+    //delete previous canvas
+    pixelCanvas.textContent = ``;
     //determine canvas dimensions from user input
     let width = document.getElementById("width").value;
     let height = document.getElementById("height").value;
@@ -32,12 +32,12 @@ function newCanvas() {
     let cellSize = $("input[type='radio'][name='cellSize']:checked").val();
     //apply canvas width to css grid
     timesToPrintAuto = Array(Number(width)).join("auto ");
-    canvas.setAttribute("style", `grid-template-columns: ${timesToPrintAuto}auto;`);
+    pixelCanvas.setAttribute("style", `grid-template-columns: ${timesToPrintAuto}auto;`);
     //generate cells
     for (let i = 0; i < area; i++) {
         const gridCell = document.createElement("div");
         gridCell.setAttribute("class", "gridCell");
-        canvas.appendChild(gridCell);
+        pixelCanvas.appendChild(gridCell);
         gridCell.setAttribute("style", `height: ${cellSize}px; width: ${cellSize}px;`);
     }
 }
@@ -58,7 +58,7 @@ function enforceRange() {
 
 //draw
 //using JQuery!
-$(canvas).on("mousedown mouseover dragover", function(e) {
+$(pixelCanvas).on("mousedown mouseover dragover", function(e) {
     let colorChoice = document.getElementById("colorPicker").value;
     if (e.buttons == 1 || e.buttons == 3) {
         e.target.setAttribute("style", `background-color: ${colorChoice};`);
@@ -71,16 +71,20 @@ const toggleGridButton = document.querySelector("#toggleGridButton");
 toggleGridButton.addEventListener("click", toggleGrid);
 
 function toggleGrid() {
-    canvas.childNodes.forEach(cell => cell.classList.toggle("gridBorderHidden"));
+    pixelCanvas.childNodes.forEach(cell => cell.classList.toggle("gridBorderHidden"));
 }
 
 //save drawing
+//using HTML2Canvas!
 const saveButton = document.querySelector("#saveButton");
 
 saveButton.addEventListener("click", saveCanvas);
 
 function saveCanvas() {
-    html2canvas(canvas).then(function (canvas) {
+    //delete previous png
+    document.getElementById("saveImageDiv").textContent = ``;
+    //create new png
+    html2canvas(pixelCanvas).then(function (canvas) {
         document.getElementById("saveImageDiv").appendChild(canvas);
 })
 }
