@@ -87,18 +87,20 @@ function toggleGrid() {
 }
 
 //save drawing
-//using HTML2Canvas!
+//using HTML2Canvas and FileSaver.js!
 const saveButton = document.querySelector("#saveButton");
 
 saveButton.addEventListener("click", saveCanvas);
 
 function saveCanvas() {
     //delete previous png
-    document.getElementById("saveImageDiv").textContent = ``;
-    //create new png
+    saveImageDiv.textContent = ``;
+    //create new png and open 'save as' window in OS
     html2canvas(pixelCanvas).then(function (canvas) {
-        document.getElementById("saveImageDiv").appendChild(canvas);
-})
+        canvas.toBlob(function(blob) {
+            saveAs(blob, "masterpiece.png");
+    })
+});
 }
 
 //styling the color picker

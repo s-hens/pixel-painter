@@ -128,9 +128,9 @@ input[type="color"]:hover {
     font-size: 12px;
 }
 
-/*pop-ups*/
+/*new canvas settings div*/
 
-#canvasSettings {
+#canvasSettings, #saveImageDiv {
     position: fixed;
     top: 119px;
     z-index: 2;
@@ -142,13 +142,13 @@ input[type="color"]:hover {
     line-height: 24px;
 }
 
-#canvasSettings h1 {
+h1 {
     font-size: 20px;
     margin: 0;
     padding: 0;
 }
 
-#canvasSettings h2 {
+h2 {
     font-size: 16px;
     font-weight: bold;
     margin: 0;

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./javascript.js" defer></script>
     <!--HTML2Canvas library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <!--FileSaver library-->
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
     <!--JQuery library-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -27,7 +29,7 @@
         <button id="toggleGridButton"><span class="material-icons-sharp md-24">grid_off</span> Toggle gridlines</button>
         <div id="colorPickerDivWrapper">
             <span class="material-icons-sharp md-24">palette</span>
-            <div id="colorPickerDiv"><input type="color" id="colorPicker" name="colorPicker"></div>
+            <div id="colorPickerDiv"><input type="color" id="colorPicker" name="colorPicker" value="#C0392B"></div>
         </div>
     </div>
     <div id="drawingArea">
@@ -36,7 +38,6 @@
     <div id="footer">
         By Steph Henson | <a href="https://github.com/s-hens/pixel-painter">GitHub</a>
     </div>
-
     <div id="canvasSettings">
         <div class="canvasSettingsDivider">
             <h1>New Canvas</h1><button id="closeCanvasSettings">✕</button>
@@ -58,8 +59,5 @@
         <hr>
         <span class="centerTheStupidThing"><button id="newCanvasButton">Create</button></span>
     </div>
-
-    <div id="saveImageDiv"></div>
-    
 </body>
 </html>
