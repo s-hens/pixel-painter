@@ -6,8 +6,9 @@ const openCanvasSettings = document.querySelector("#openCanvasSettings");
 
 openCanvasSettings.addEventListener("click", canvasSettingsWindow);
 
+const canvasSettings = document.getElementById("canvasSettings");
+
 function canvasSettingsWindow() {
-    const canvasSettings = document.getElementById("canvasSettings");
     if (canvasSettings.style.display == "block") {
         canvasSettings.style.display = "none";
     } else {
@@ -40,6 +41,8 @@ function newCanvas() {
         pixelCanvas.appendChild(gridCell);
         gridCell.setAttribute("style", `height: ${cellSize}px; width: ${cellSize}px;`);
     }
+    //close "new canvas" settings div
+    canvasSettings.style.display = "none";
 }
 
 //enforce maximum canvas size
