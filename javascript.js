@@ -95,3 +95,16 @@ function saveCanvas() {
         document.getElementById("saveImageDiv").appendChild(canvas);
 })
 }
+
+//styling the color picker
+const colorPicker = document.getElementById("colorPicker");
+
+const colorPickerDiv = document.getElementById("colorPickerDiv");
+
+colorPicker.addEventListener("change", matchColor);
+
+function matchColor() {
+    colorPickerDiv.style.backgroundColor = colorPicker.value;
+}
+
+colorPickerDiv.style.backgroundColor = colorPicker.value;

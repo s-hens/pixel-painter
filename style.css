@@ -1,3 +1,5 @@
+/*global*/
+
 body {
     margin: 0;
     padding: 0;
@@ -7,6 +9,64 @@ body {
     flex-direction: column;
     font-family: 'Recursive', sans-serif;
 }
+
+/*header*/
+
+#header {
+    background-color: #666666;
+    color: #FFFFFF;
+    padding: 10px 10px 0;
+}
+
+.title1 {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.title2 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+/*control panel*/
+
+#controlPanel {
+    background-color: #666666;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+#controlPanel button {
+    background-color: #C7C7C7;
+    border: none;
+    padding: 5px 10px 10px;
+    font-family: 'Recursive', sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.material-icons-sharp.md-24 {
+    font-size: 24px;
+    line-height: 18px;
+    transform: translateY(5px);
+}
+
+#canvasSettings {
+    display: none;
+}
+
+#colorPickerDiv {
+    display: inline;
+    height: 39px;
+    box-sizing: border-box;
+    border: 10px solid #C7C7C7;
+}
+
+input[type="color"] {
+	opacity: 0;
+}
+
+/*drawing area*/
 
 #drawingArea{
     padding: 10px;
@@ -35,46 +95,7 @@ body {
     border: 0;
 }
 
-#header {
-    background-color: #666666;
-    color: #FFFFFF;
-    padding: 10px 10px 0;
-}
-
-.title1 {
-    font-size: 30px;
-    font-weight: 300;
-}
-
-.title2 {
-    font-size: 30px;
-    font-weight: 500;
-}
-
-#controlPanel {
-    background-color: #666666;
-    color: #FFFFFF;
-    padding: 10px;
-}
-
-#controlPanel button {
-    background-color: #C7C7C7;
-    border: none;
-    padding: 5px 10px 10px;
-    font-family: 'Recursive', sans-serif;
-    font-size: 18px;
-    line-height: 18px;
-}
-
-.material-icons-sharp.md-24 {
-    font-size: 24px;
-    line-height: 18px;
-    transform: translateY(5px);
-}
-
-#canvasSettings {
-    display: none;
-}
+/*footer*/
 
 #footer {
     background-color: #666666;

@@ -25,7 +25,9 @@
         <button id="openCanvasSettings"><span class="material-icons-sharp md-24">add_circle</span> New</button>
         <button id="saveButton"><span class="material-icons-sharp md-24">save</span> Save</button>
         <button id="toggleGridButton"><span class="material-icons-sharp md-24">grid_off</span> Toggle gridlines</button>
-        <span class="material-icons-sharp md-24">palette</span>
+        <div id="colorPickerDiv">
+            <input type="color" id="colorPicker" name="colorPicker">
+        </div>
     </div>
     <div id="drawingArea">
         <div id="pixelCanvas"></div>
@@ -44,10 +46,6 @@
         <input type="radio" id="cellSizeLarge" name="cellSize" value="20"><label for="20">Large (20 px²)</label><br>
         <input type="radio" id="cellSizeJumbo" name="cellSize" value="25"><label for="25">Jumbo (25 px²)</label><br>
     <button id="newCanvasButton">Create</button>
-</div>
-
-<div id="colorPickerDiv">
-    <label for="colorPicker">Colour:</label> <input type="color" id="colorPicker" name="colorPicker">
 </div>
 
 <div id="saveImageDiv">
