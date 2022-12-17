@@ -25,8 +25,9 @@
         <button id="openCanvasSettings"><span class="material-icons-sharp md-24">add_circle</span> New</button>
         <button id="saveButton"><span class="material-icons-sharp md-24">save</span> Save</button>
         <button id="toggleGridButton"><span class="material-icons-sharp md-24">grid_off</span> Toggle gridlines</button>
-        <div id="colorPickerDiv">
-            <input type="color" id="colorPicker" name="colorPicker">
+        <div id="colorPickerDivWrapper">
+            <span class="material-icons-sharp md-24">palette</span>
+            <div id="colorPickerDiv"><input type="color" id="colorPicker" name="colorPicker"></div>
         </div>
     </div>
     <div id="drawingArea">
@@ -48,9 +49,7 @@
     <button id="newCanvasButton">Create</button>
 </div>
 
-<div id="saveImageDiv">
-
-</div>
+<div id="saveImageDiv"></div>
 
 </body>
 </html>

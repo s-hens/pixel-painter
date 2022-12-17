@@ -37,9 +37,10 @@ body {
 }
 
 #controlPanel button {
+    color: #000000;
     background-color: #C7C7C7;
-    border: none;
     padding: 5px 10px 10px;
+    border: 0;
     font-family: 'Recursive', sans-serif;
     font-size: 18px;
     line-height: 18px;
@@ -55,11 +56,19 @@ body {
     display: none;
 }
 
+#colorPickerDivWrapper {
+    color: #000000;
+    background-color: #C7C7C7;
+    display: inline;
+    padding: 11px 10px 9px;
+    line-height: 18px;
+}
+
 #colorPickerDiv {
+    color: #000000;
     display: inline;
     height: 39px;
-    box-sizing: border-box;
-    border: 10px solid #C7C7C7;
+    border: none;
 }
 
 input[type="color"] {
