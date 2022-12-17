@@ -3,8 +3,10 @@ const pixelCanvas = document.getElementById("pixelCanvas");
 
 //open "new canvas" settings div
 const openCanvasSettings = document.querySelector("#openCanvasSettings");
-
 openCanvasSettings.addEventListener("click", canvasSettingsWindow);
+
+const closeCanvasSettings = document.querySelector("#closeCanvasSettings");
+closeCanvasSettings.addEventListener("click", canvasSettingsWindow);
 
 const canvasSettings = document.getElementById("canvasSettings");
 

@@ -46,6 +46,10 @@ body {
     line-height: 18px;
 }
 
+#controlPanel button:hover {
+    cursor: pointer;
+}
+
 .material-icons-sharp.md-24 {
     font-size: 24px;
     line-height: 18px;
@@ -75,14 +79,20 @@ input[type="color"] {
 	opacity: 0;
 }
 
+input[type="color"]:hover {
+    cursor: pointer;
+}
+
 /*drawing area*/
 
 #drawingArea{
-    padding: 10px;
+    height: 100%;
+    padding: 0;
     background-color: #7F7F7F;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: scroll;
 }
 
 #pixelCanvas {
@@ -110,4 +120,73 @@ input[type="color"] {
     background-color: #666666;
     color: #FFFFFF;
     padding: 10px;
+    font-size: 12px;
+}
+
+#footer a {
+    color: #C7C7C7;
+    font-size: 12px;
+}
+
+/*pop-ups*/
+
+#canvasSettings {
+    position: fixed;
+    top: 119px;
+    z-index: 2;
+    align-self: center;
+    background-color: #FFFFFF;
+    border: 2px solid #C7C7C7;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#canvasSettings h1 {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#canvasSettings h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+input[type="number"] {
+    width: 100px;
+    border: 2px solid #C7C7C7;
+    margin-left: 5px;
+}
+
+#canvasSettings hr {
+    border: 1px solid #FFFFFF;
+}
+
+.canvasSettingsDivider {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#canvasSettings button {
+    color: #000000;
+    background-color: #C7C7C7;
+    padding: 5px;
+    border: 0;
+    font-family: 'Recursive', sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+#canvasSettings button:hover {
+    cursor: pointer;
+}
+
+.centerTheStupidThing {
+    display: block;
+    text-align: center;
 }
