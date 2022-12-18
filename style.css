@@ -56,10 +56,6 @@ body {
     cursor: pointer;
 }
 
-#eraserButton {
-    transform: translateY(1px);
-}
-
 #eraserButton img {
     transform: translateY(3px);
     margin-right: 2px;
@@ -110,12 +106,18 @@ input[type="color"]:hover {
     overflow: scroll;
 }
 
+#pixelCanvasFrame {
+    height: fit-content;
+    width: fit-content;
+    box-sizing: border-box;
+    border: 1px solid #C7C7C7;
+}
+
 #pixelCanvas {
     height: fit-content;
     width: fit-content;
     display: grid;
-    border-right: 1px solid #C7C7C7;
-    border-top: 1px solid #C7C7C7;
+    cursor:url(./images/paintbrush-icon.png),auto;
 }
 
 .gridCell {
