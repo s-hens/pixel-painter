@@ -1,6 +1,8 @@
 //global elements
 const pixelCanvas = document.getElementById("pixelCanvas");
 
+var cellSize;
+
 //open "new canvas" settings div
 const openCanvasSettings = document.querySelector("#openCanvasSettings");
 openCanvasSettings.addEventListener("click", canvasSettingsWindow);
@@ -32,7 +34,7 @@ function newCanvas() {
     let area = width * height;
     //determine cell size from user input
     //using JQuery!
-    let cellSize = $("input[type='radio'][name='cellSize']:checked").val();
+    cellSize = $("input[type='radio'][name='cellSize']:checked").val();
     //apply canvas width to css grid
     timesToPrintAuto = Array(Number(width)).join("auto ");
     pixelCanvas.setAttribute("style", `grid-template-columns: ${timesToPrintAuto}auto;`);
@@ -82,7 +84,7 @@ function draw() {
     $(pixelCanvas).on("mousedown mouseover dragover", function(e) {
         let colorChoice = colorPicker.value;
         if (e.buttons == 1) {
-            e.target.setAttribute("style", `background-color: ${colorChoice};`);
+            e.target.setAttribute("style", `background-color: ${colorChoice}; height: ${cellSize}px; width: ${cellSize}px;`);
             pixelCanvas.style.cursor = "url(./images/paintbrush-icon.png),auto";
         };
     });
@@ -99,7 +101,7 @@ function erase() {
     pixelCanvas.style.cursor = "url(./images/eraser-icon.png),auto";
     $(pixelCanvas).on("mousedown mouseover dragover", function(e) {
         if (e.buttons == 1) {
-            e.target.setAttribute("style", `background-color: #FFFFFF;`);
+            e.target.setAttribute("style", `background-color: #FFFFFF; height: ${cellSize}px; width: ${cellSize}px;`);
             pixelCanvas.style.cursor = "url(./images/eraser-icon.png),auto";
         };
     });
