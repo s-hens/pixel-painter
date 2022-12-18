@@ -54,26 +54,55 @@ $(document.querySelector("#width")).on("change keyup paste", enforceRange);
 $(document.querySelector("#height")).on("change keyup paste", enforceRange);
 
 function enforceRange() {
-    if (this.value > 75) {
-        this.value = 75;
+    if (this.value > 50) {
+        this.value = 50;
     } else if (this.value < 2) {
         this.value = 2;
     }
 }
 
+//color picker
+const colorPicker = document.getElementById("colorPicker");
+
+const colorPickerDiv = document.getElementById("colorPickerDiv");
+colorPickerDiv.style.backgroundColor = colorPicker.value;
+
+$(colorPicker).on("click change", matchColor);
+
+function matchColor() {
+    colorPickerDiv.style.backgroundColor = colorPicker.value;
+    draw();
+}
+
 //draw
 //using JQuery!
-$(pixelCanvas).on("mousedown mouseover dragover", function(e) {
-    let colorChoice = document.getElementById("colorPicker").value;
-    if (e.buttons == 1 || e.buttons == 3) {
-        e.target.setAttribute("style", `background-color: ${colorChoice};`);
-    };
-});
+function draw() {
+    pixelCanvas.style.cursor = "url(./images/paintbrush-icon.png),auto";
+    $(pixelCanvas).on("mousedown mouseover dragover", function(e) {
+        let colorChoice = colorPicker.value;
+        if (e.buttons == 1 || e.buttons == 3) {
+            e.target.setAttribute("style", `background-color: ${colorChoice};`);
+            pixelCanvas.style.cursor = "url(./images/paintbrush-icon.png),auto";
+        };
+    });
+}
+
+draw();
 
 //erase
 const eraserButton = document.querySelector("#eraserButton");
 
+eraserButton.addEventListener("click", erase);
 
+function erase() {
+    pixelCanvas.style.cursor = "url(./images/eraser-icon.png),auto";
+    $(pixelCanvas).on("mousedown mouseover dragover", function(e) {
+        if (e.buttons == 1 || e.buttons == 3) {
+            e.target.setAttribute("style", `background-color: #FFFFFF;`);
+            pixelCanvas.style.cursor = "url(./images/eraser-icon.png),auto";
+        };
+    });
+}
 
 //toggle grid visibility
 const toggleGridButton = document.querySelector("#toggleGridButton");
@@ -106,16 +135,4 @@ function saveCanvas() {
             saveAs(blob, "masterpiece.png");
     })
 });
-}
-
-//styling the color picker
-const colorPicker = document.getElementById("colorPicker");
-
-const colorPickerDiv = document.getElementById("colorPickerDiv");
-colorPickerDiv.style.backgroundColor = colorPicker.value;
-
-colorPicker.addEventListener("change", matchColor);
-
-function matchColor() {
-    colorPickerDiv.style.backgroundColor = colorPicker.value;
 }
