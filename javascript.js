@@ -54,8 +54,8 @@ $(document.querySelector("#width")).on("change keyup paste", enforceRange);
 $(document.querySelector("#height")).on("change keyup paste", enforceRange);
 
 function enforceRange() {
-    if (this.value > 50) {
-        this.value = 50;
+    if (this.value > 100) {
+        this.value = 100;
     } else if (this.value < 2) {
         this.value = 2;
     }
