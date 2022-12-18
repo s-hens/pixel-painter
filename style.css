@@ -106,18 +106,12 @@ input[type="color"]:hover {
     overflow: scroll;
 }
 
-#pixelCanvasFrame {
-    height: fit-content;
-    width: fit-content;
-    box-sizing: border-box;
-    border: 1px solid #C7C7C7;
-}
-
 #pixelCanvas {
     height: fit-content;
     width: fit-content;
     display: grid;
     cursor:url(./images/paintbrush-icon.png),auto;
+    overflow: hidden;
 }
 
 .gridCell {
