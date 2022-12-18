@@ -107,11 +107,10 @@ function saveCanvas() {
 const colorPicker = document.getElementById("colorPicker");
 
 const colorPickerDiv = document.getElementById("colorPickerDiv");
+colorPickerDiv.style.backgroundColor = colorPicker.value;
 
 colorPicker.addEventListener("change", matchColor);
 
 function matchColor() {
     colorPickerDiv.style.backgroundColor = colorPicker.value;
 }
-
-colorPickerDiv.style.backgroundColor = colorPicker.value;

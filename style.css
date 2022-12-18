@@ -26,6 +26,11 @@ body {
 .title2 {
     font-size: 32px;
     font-weight: 500;
+    background-color: #FFFFFF;
+    background: linear-gradient(90deg, rgba(240,98,146,1) 0%, rgba(255,224,130,1) 25%, rgba(197,225,165,1) 50%, rgba(144,202,249,1) 75%, rgba(179,157,219,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /*control panel*/
@@ -132,13 +137,13 @@ input[type="color"]:hover {
 
 /*new canvas settings div*/
 
-#canvasSettings, #saveImageDiv {
+#canvasSettings {
     position: fixed;
     top: 119px;
     z-index: 2;
     align-self: center;
     background-color: #FFFFFF;
-    border: 2px solid #C7C7C7;
+    border: 2px solid #666666;
     padding: 10px;
     font-size: 16px;
     line-height: 24px;
@@ -159,7 +164,7 @@ h2 {
 }
 
 input[type="number"] {
-    width: 100px;
+    width: 130px;
     border: 2px solid #C7C7C7;
     margin-left: 5px;
 }
@@ -171,6 +176,7 @@ input[type="number"] {
 .canvasSettingsDivider {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
