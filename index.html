@@ -14,7 +14,7 @@
     <!--JQuery library-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!--Google icons-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
     rel="stylesheet">
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500&display=swap" rel="stylesheet">
@@ -24,12 +24,13 @@
         <span class="title1">Pixel</span><span class="title2">Painter</span>
     </div>
     <div id="controlPanel">
-        <button id="openCanvasSettings"><span class="material-icons-sharp md-24">add_circle</span> New</button>
-        <button id="saveButton"><span class="material-icons-sharp md-24">save</span> Save</button>
-        <button id="toggleGridButton"><span class="material-icons-sharp md-24">grid_off</span> Toggle gridlines</button>
+        <button id="openCanvasSettings"><span class="material-icons-round md-24">add_circle</span> New</button>
+        <button id="saveButton"><span class="material-icons-round md-24">save</span> Save</button>
+        <button id="toggleGridButton"><span class="material-icons-round md-24">grid_off</span> Toggle gridlines</button>
+        <button id="eraserButton"><img src="./images/eraser-icon.png"> Eraser</button>
         <div id="colorPickerDivWrapper">
-            <span class="material-icons-sharp md-24">palette</span>
-            <div id="colorPickerDiv" class="rainbowClass"><input type="color" id="colorPicker" name="colorPicker" value="#f06292"></div>
+            <span class="material-icons-round md-24">palette</span>
+            <div id="colorPickerDiv"><input type="color" id="colorPicker" name="colorPicker" value="#f06292"></div>
         </div>
     </div>
     <div id="drawingArea">
@@ -49,7 +50,7 @@
         <div class="canvasSettingsDivider">
             <label for="height"><h2>Height:</h2></label> <input type="number" id="height" name="height">
         </div>
-        <span class="centerTheStupidThing">(Min: 2x2, Max: 100x100)</span>
+        <span class="centerTheStupidThing">(Min: 2x2, Max: 75x75)</span>
         <hr>
         <h2>Cell Size:</h2>
             <input type="radio" id="cellSizeSmall" name="cellSize" value="10"><label for="cellSizeSmall">Small (10 px²)</label><br>

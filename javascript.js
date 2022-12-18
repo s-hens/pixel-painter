@@ -54,8 +54,8 @@ $(document.querySelector("#width")).on("change keyup paste", enforceRange);
 $(document.querySelector("#height")).on("change keyup paste", enforceRange);
 
 function enforceRange() {
-    if (this.value > 100) {
-        this.value = 100;
+    if (this.value > 75) {
+        this.value = 75;
     } else if (this.value < 2) {
         this.value = 2;
     }
@@ -69,6 +69,11 @@ $(pixelCanvas).on("mousedown mouseover dragover", function(e) {
         e.target.setAttribute("style", `background-color: ${colorChoice};`);
     };
 });
+
+//erase
+const eraserButton = document.querySelector("#eraserButton");
+
+
 
 //toggle grid visibility
 const toggleGridButton = document.querySelector("#toggleGridButton");
