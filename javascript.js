@@ -80,12 +80,12 @@ function matchColor() {
 //draw
 //using JQuery!
 function draw() {
-    pixelCanvas.style.cursor = "url(./images/paintbrush-icon.png),auto";
+    pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
     $(pixelCanvas).on("mousedown mouseover dragover", function(e) {
         let colorChoice = colorPicker.value;
         if (e.buttons == 1) {
             e.target.setAttribute("style", `background-color: ${colorChoice}; height: ${cellSize}px; width: ${cellSize}px;`);
-            pixelCanvas.style.cursor = "url(./images/paintbrush-icon.png),auto";
+            pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
         };
     });
 }

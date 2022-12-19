@@ -107,7 +107,7 @@ input[type="color"]:hover {
 }
 
 #pixelCanvas {
-    cursor:url(./images/paintbrush-icon.png),auto;
+    cursor:url(./images/pencil-icon.png),auto;
     display: grid;
     width: fit-content;
     height: fit-content;
