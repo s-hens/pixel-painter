@@ -84,7 +84,9 @@ function draw() {
     $(pixelCanvas).on("mousedown mouseover dragover", function(e) {
         let colorChoice = colorPicker.value;
         if (e.buttons == 1) {
+            //prevent cursor from changing
             e.preventDefault();
+            //paint cells
             e.target.setAttribute("style", `background-color: ${colorChoice}; height: ${cellSize}px; width: ${cellSize}px;`);
             pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
         };
@@ -102,7 +104,9 @@ function erase() {
     pixelCanvas.style.cursor = "url(./images/eraser-icon.png),auto";
     $(pixelCanvas).on("mousedown mouseover dragover", function(e) {
         if (e.buttons == 1) {
+            //prevent cursor from changing
             e.preventDefault();
+            //erase cells
             e.target.setAttribute("style", `background-color: #FFFFFF; height: ${cellSize}px; width: ${cellSize}px;`);
             pixelCanvas.style.cursor = "url(./images/eraser-icon.png),auto";
         };
