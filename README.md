@@ -6,5 +6,6 @@ Summary: This is a JavaScript-based web app which allows the user to create simp
 
 During this project, I learned about: 
 - JavaScript libraries: JQuery, FileSaver.js, HTML2Canvas
-- Google material icons
+- Managing multiple event listeners
 - The quirks of color input elements
+- Using Google material design icons
