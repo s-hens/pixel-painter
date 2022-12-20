@@ -125,8 +125,6 @@ function rainbowDraw() {
             currentRainbowColor = rainbowColors.shift();
             //then push that color to the back of the queue
             rainbowColors.push(`${currentRainbowColor}`);
-            console.log(rainbowColors);
-            console.log(currentRainbowColor);
             //paint cells
             e.target.setAttribute("style", `background-color: #${currentRainbowColor}; height: ${cellSize}px; width: ${cellSize}px;`);
         };
@@ -147,7 +145,6 @@ function erase() {
     //turn on erase event handler
     $(pixelCanvas).on("mousedown mouseover dragover", function eraseClick(e) {
         if (e.buttons == 1) {
-            console.log(`I am erasing`);
             //prevent cursor from changing
             e.preventDefault();
             pixelCanvas.style.cursor = "url(./images/eraser-icon.png),auto";
