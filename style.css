@@ -205,6 +205,13 @@ input[type="number"] {
     text-align: center;
 }
 
+.centerTheStupidThingSmall {
+    font-size: 12px;
+    line-height: 14px;
+    display: block;
+    text-align: center;
+}
+
 /*save image div*/
 
 #saveImageDiv {
