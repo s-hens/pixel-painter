@@ -1,7 +1,7 @@
 //global elements
 const pixelCanvas = document.getElementById("pixelCanvas");
 
-var cellSize;
+let cellSize;
 
 //open "new canvas" settings div
 const openCanvasSettings = document.querySelector("#openCanvasSettings");
@@ -95,7 +95,60 @@ function draw() {
 
 draw();
 
+/*
+//rainbow pen: randomised edition
+//using JQuery!
+const rainbowButton = document.querySelector("#rainbowButton");
+
+rainbowButton.addEventListener("click", rainbowDraw);
+
+const rainbowColors = ["#f06292", "#ffe082", "#c5e1a5", "#90caf9", "#b39ddb"];
+
+function rainbowDraw() {
+    pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
+    $(pixelCanvas).on("mousedown mouseover dragover", function(e) {
+        let randomColor = rainbowColors[Math.floor(Math.random() * 5)];
+        if (e.buttons == 1) {
+            //prevent cursor from changing
+            e.preventDefault();
+            //paint cells
+            e.target.setAttribute("style", `background-color: ${randomColor}; height: ${cellSize}px; width: ${cellSize}px;`);
+            pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
+        };
+    });
+}
+*/
+
+//rainbow pen: ordered edition
+//using JQuery!
+
+const rainbowButton = document.querySelector("#rainbowButton");
+
+rainbowButton.addEventListener("click", rainbowDraw);
+
+const rainbowColors = ["FFADAD", "FFD6A5", "FDFFB6", "CAFFBF", "9BF6FF", "A0C4FF", "BDB2FF", "FFCBFF"];
+
+let currentRainbowColor;
+
+function rainbowDraw() {
+    pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
+    $(pixelCanvas).on("mousedown mouseover dragover", function(e) {
+        //get first color from rainbow array
+        currentRainbowColor = rainbowColors.shift();
+        //then push that color to the back of the queue
+        rainbowColors.push(`${currentRainbowColor}`);
+        if (e.buttons == 1) {
+            //prevent cursor from changing
+            e.preventDefault();
+            //paint cells
+            e.target.setAttribute("style", `background-color: #${currentRainbowColor}; height: ${cellSize}px; width: ${cellSize}px;`);
+            pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
+        };
+    });
+}
+
 //erase
+//using JQuery!
 const eraserButton = document.querySelector("#eraserButton");
 
 eraserButton.addEventListener("click", erase);
