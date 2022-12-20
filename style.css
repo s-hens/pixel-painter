@@ -8,6 +8,8 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Recursive', sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 /*header*/
