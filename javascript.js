@@ -80,44 +80,24 @@ function matchColor() {
 //draw
 //using JQuery!
 function draw() {
+    //use custom cursor
     pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
-    $(pixelCanvas).on("mousedown mouseover dragover", function(e) {
+    //turn off other event handlers
+    $(pixelCanvas).off("mousedown mouseover dragover");
+    //turn on drawing event handler
+    $(pixelCanvas).on("mousedown mouseover dragover", function drawClick(e) {
         let colorChoice = colorPicker.value;
         if (e.buttons == 1) {
             //prevent cursor from changing
             e.preventDefault();
+            pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
             //paint cells
             e.target.setAttribute("style", `background-color: ${colorChoice}; height: ${cellSize}px; width: ${cellSize}px;`);
-            pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
         };
     });
 }
 
 draw();
-
-/*
-//rainbow pen: randomised edition
-//using JQuery!
-const rainbowButton = document.querySelector("#rainbowButton");
-
-rainbowButton.addEventListener("click", rainbowDraw);
-
-const rainbowColors = ["#f06292", "#ffe082", "#c5e1a5", "#90caf9", "#b39ddb"];
-
-function rainbowDraw() {
-    pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
-    $(pixelCanvas).on("mousedown mouseover dragover", function(e) {
-        let randomColor = rainbowColors[Math.floor(Math.random() * 5)];
-        if (e.buttons == 1) {
-            //prevent cursor from changing
-            e.preventDefault();
-            //paint cells
-            e.target.setAttribute("style", `background-color: ${randomColor}; height: ${cellSize}px; width: ${cellSize}px;`);
-            pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
-        };
-    });
-}
-*/
 
 //rainbow pen: ordered edition
 //using JQuery!
@@ -126,23 +106,29 @@ const rainbowButton = document.querySelector("#rainbowButton");
 
 rainbowButton.addEventListener("click", rainbowDraw);
 
-const rainbowColors = ["FFADAD", "FFD6A5", "FDFFB6", "CAFFBF", "9BF6FF", "A0C4FF", "BDB2FF", "FFCBFF"];
+let rainbowColors = ["FFADAD", "FFD6A5", "FDFFB6", "CAFFBF", "9BF6FF", "A0C4FF", "BDB2FF", "FFCBFF"];
 
 let currentRainbowColor;
 
 function rainbowDraw() {
-    pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
-    $(pixelCanvas).on("mousedown mouseover dragover", function(e) {
-        //get first color from rainbow array
-        currentRainbowColor = rainbowColors.shift();
-        //then push that color to the back of the queue
-        rainbowColors.push(`${currentRainbowColor}`);
+    //use custom cursor
+    pixelCanvas.style.cursor = "url(./images/special-pencil-icon.png),auto";
+    //turn off other event handlers
+    $(pixelCanvas).off("mousedown mouseover dragover");
+    //turn on rainbow pen event handler
+    $(pixelCanvas).on("mousedown mouseover dragover", function rainbowDrawClick(e) {
         if (e.buttons == 1) {
             //prevent cursor from changing
             e.preventDefault();
+            pixelCanvas.style.cursor = "url(./images/special-pencil-icon.png),auto";
+            //get first color from rainbow array
+            currentRainbowColor = rainbowColors.shift();
+            //then push that color to the back of the queue
+            rainbowColors.push(`${currentRainbowColor}`);
+            console.log(rainbowColors);
+            console.log(currentRainbowColor);
             //paint cells
             e.target.setAttribute("style", `background-color: #${currentRainbowColor}; height: ${cellSize}px; width: ${cellSize}px;`);
-            pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
         };
     });
 }
@@ -154,14 +140,19 @@ const eraserButton = document.querySelector("#eraserButton");
 eraserButton.addEventListener("click", erase);
 
 function erase() {
+    //use custom cursor
     pixelCanvas.style.cursor = "url(./images/eraser-icon.png),auto";
-    $(pixelCanvas).on("mousedown mouseover dragover", function(e) {
+    //turn off other event handlers
+    $(pixelCanvas).off("mousedown mouseover dragover");
+    //turn on erase event handler
+    $(pixelCanvas).on("mousedown mouseover dragover", function eraseClick(e) {
         if (e.buttons == 1) {
+            console.log(`I am erasing`);
             //prevent cursor from changing
             e.preventDefault();
+            pixelCanvas.style.cursor = "url(./images/eraser-icon.png),auto";
             //erase cells
             e.target.setAttribute("style", `background-color: #FFFFFF; height: ${cellSize}px; width: ${cellSize}px;`);
-            pixelCanvas.style.cursor = "url(./images/eraser-icon.png),auto";
         };
     });
 }
