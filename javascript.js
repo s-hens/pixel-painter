@@ -34,7 +34,9 @@ function newToolTipHide() {
     newToolTip.style.display = "none";
 }
 
-//create new canvas
+//create new canvas and show the rest of the control panel
+const restOfTheMenu = document.getElementById("restOfTheControlPanel");
+
 const newCanvasButton = document.querySelector("#newCanvasButton");
 
 newCanvasButton.addEventListener("click", newCanvas);
@@ -61,13 +63,15 @@ function newCanvas() {
     }
     //close "new canvas" settings div
     canvasSettings.style.display = "none";
+    //show rest of the menu
+    restOfTheMenu.style.display = "inline";
 }
 
 //enforce maximum canvas size
 //using JQuery!
-$(document.querySelector("#width")).on("change keyup paste", enforceRange);
+$(document.querySelector("#width")).on("mouseout", enforceRange);
 
-$(document.querySelector("#height")).on("change keyup paste", enforceRange);
+$(document.querySelector("#height")).on("mouseout", enforceRange);
 
 function enforceRange() {
     if (this.value > 50) {

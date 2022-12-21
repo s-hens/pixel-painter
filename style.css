@@ -108,10 +108,10 @@ input[type="color"]:hover {
     padding: 10px;
     font-size: 14px;
     line-height: 16px;
-    height: 19px;
+    height: 20px;
 }
 
-#toolTips div {
+#toolTips div, #restOfTheControlPanel {
     display: none;
 }
 
