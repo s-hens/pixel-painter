@@ -20,6 +20,20 @@ function canvasSettingsWindow() {
     }
 }
 
+//"new canvas" tooltip
+openCanvasSettings.addEventListener("mouseover", newToolTipDisplay);
+openCanvasSettings.addEventListener("mouseout", newToolTipHide);
+
+const newToolTip = document.getElementById("newToolTip");
+
+function newToolTipDisplay() {
+    newToolTip.style.display = "block";
+}
+
+function newToolTipHide() {
+    newToolTip.style.display = "none";
+}
+
 //create new canvas
 const newCanvasButton = document.querySelector("#newCanvasButton");
 
@@ -77,11 +91,31 @@ function matchColor() {
     draw();
 }
 
+//"color picker" tooltip
+const colorPickerDivWrapper = document.getElementById("colorPickerDivWrapper");
+colorPickerDivWrapper.addEventListener("mouseover", colorPickerToolTipDisplay);
+colorPickerDivWrapper.addEventListener("mouseout", colorPickerToolTipHide);
+
+const colorPickerToolTip = document.getElementById("colorPickerToolTip");
+
+function colorPickerToolTipDisplay() {
+    colorPickerToolTip.style.display = "block";
+}
+
+function colorPickerToolTipHide() {
+    colorPickerToolTip.style.display = "none";
+}
+
+
 //draw
 //using JQuery!
+const drawButton = document.querySelector("#drawButton");
+
+drawButton.addEventListener("click", draw);
+
 function draw() {
     //use custom cursor
-    pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
+    pixelCanvas.style.cursor = "url(./images/brush-icon.png),auto";
     //turn off other event handlers
     $(pixelCanvas).off("mousedown mouseover dragover");
     //turn on drawing event handler
@@ -90,7 +124,7 @@ function draw() {
         if (e.buttons == 1) {
             //prevent cursor from changing
             e.preventDefault();
-            pixelCanvas.style.cursor = "url(./images/pencil-icon.png),auto";
+            pixelCanvas.style.cursor = "url(./images/brush-icon.png),auto";
             //paint cells
             e.target.setAttribute("style", `background-color: ${colorChoice}; height: ${cellSize}px; width: ${cellSize}px;`);
         };
@@ -99,9 +133,22 @@ function draw() {
 
 draw();
 
-//rainbow pen: ordered edition
-//using JQuery!
+//"draw" tooltip
+drawButton.addEventListener("mouseover", drawToolTipDisplay);
+drawButton.addEventListener("mouseout", drawToolTipHide);
 
+const drawToolTip = document.getElementById("drawToolTip");
+
+function drawToolTipDisplay() {
+    drawToolTip.style.display = "block";
+}
+
+function drawToolTipHide() {
+    drawToolTip.style.display = "none";
+}
+
+//rainbow pen
+//using JQuery!
 const rainbowButton = document.querySelector("#rainbowButton");
 
 rainbowButton.addEventListener("click", rainbowDraw);
@@ -112,7 +159,7 @@ let currentRainbowColor;
 
 function rainbowDraw() {
     //use custom cursor
-    pixelCanvas.style.cursor = "url(./images/special-pencil-icon.png),auto";
+    pixelCanvas.style.cursor = "url(./images/special-brush-icon.png),auto";
     //turn off other event handlers
     $(pixelCanvas).off("mousedown mouseover dragover");
     //turn on rainbow pen event handler
@@ -120,7 +167,7 @@ function rainbowDraw() {
         if (e.buttons == 1) {
             //prevent cursor from changing
             e.preventDefault();
-            pixelCanvas.style.cursor = "url(./images/special-pencil-icon.png),auto";
+            pixelCanvas.style.cursor = "url(./images/special-brush-icon.png),auto";
             //get first color from rainbow array
             currentRainbowColor = rainbowColors.shift();
             //then push that color to the back of the queue
@@ -129,6 +176,20 @@ function rainbowDraw() {
             e.target.setAttribute("style", `background-color: #${currentRainbowColor}; height: ${cellSize}px; width: ${cellSize}px;`);
         };
     });
+}
+
+//"rainbow" tooltip
+rainbowButton.addEventListener("mouseover", rainbowToolTipDisplay);
+rainbowButton.addEventListener("mouseout", rainbowToolTipHide);
+
+const rainbowToolTip = document.getElementById("rainbowToolTip");
+
+function rainbowToolTipDisplay() {
+    rainbowToolTip.style.display = "block";
+}
+
+function rainbowToolTipHide() {
+    rainbowToolTip.style.display = "none";
 }
 
 //erase
@@ -154,6 +215,20 @@ function erase() {
     });
 }
 
+//"erase" tooltip
+eraserButton.addEventListener("mouseover", eraseToolTipDisplay);
+eraserButton.addEventListener("mouseout", eraseToolTipHide);
+
+const eraseToolTip = document.getElementById("eraseToolTip");
+
+function eraseToolTipDisplay() {
+    eraseToolTip.style.display = "block";
+}
+
+function eraseToolTipHide() {
+    eraseToolTip.style.display = "none";
+}
+
 //toggle grid visibility
 const toggleGridButton = document.querySelector("#toggleGridButton");
 
@@ -161,13 +236,27 @@ toggleGridButton.addEventListener("click", toggleGrid);
 
 function toggleGrid() {
     //toggle icon on button
-    if (toggleGridButton.innerHTML === (`<span class="material-icons-round md-24">grid_off</span> Toggle gridlines`)) {
-        toggleGridButton.innerHTML = (`<span class="material-icons-round md-24">grid_on</span> Toggle gridlines`);
+    if (toggleGridButton.innerHTML === (`<span class="material-icons-round md-24">grid_off</span> Grid`)) {
+        toggleGridButton.innerHTML = (`<span class="material-icons-round md-24">grid_on</span> Grid`);
     } else {
-        toggleGridButton.innerHTML = (`<span class="material-icons-round md-24">grid_off</span> Toggle gridlines`);
+        toggleGridButton.innerHTML = (`<span class="material-icons-round md-24">grid_off</span> Grid`);
     }
     //toggle the actual gridlines
     pixelCanvas.childNodes.forEach(cell => cell.classList.toggle("gridBorderHidden"));
+}
+
+//"grid" tooltip
+toggleGridButton.addEventListener("mouseover", gridToolTipDisplay);
+toggleGridButton.addEventListener("mouseout", gridToolTipHide);
+
+const gridToolTip = document.getElementById("gridToolTip");
+
+function gridToolTipDisplay() {
+    gridToolTip.style.display = "block";
+}
+
+function gridToolTipHide() {
+    gridToolTip.style.display = "none";
 }
 
 //save drawing
@@ -185,4 +274,18 @@ function saveCanvas() {
             saveAs(blob, "masterpiece.png");
     })
 });
+}
+
+//"save" tooltip
+saveButton.addEventListener("mouseover", saveToolTipDisplay);
+saveButton.addEventListener("mouseout", saveToolTipHide);
+
+const saveToolTip = document.getElementById("saveToolTip");
+
+function saveToolTipDisplay() {
+    saveToolTip.style.display = "block";
+}
+
+function saveToolTipHide() {
+    saveToolTip.style.display = "none";
 }

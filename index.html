@@ -26,13 +26,24 @@
     <div id="controlPanel">
         <button id="openCanvasSettings"><span class="material-icons-round md-24">add_circle</span> New</button>
         <button id="saveButton"><span class="material-icons-round md-24">save</span> Save</button>
-        <button id="toggleGridButton"><span class="material-icons-round md-24">grid_off</span> Toggle gridlines</button>
+        <button id="toggleGridButton"><span class="material-icons-round md-24">grid_off</span> Grid</button>
+        <button id="drawButton"><img src="./images/brush-icon.png"> Paint</button>
+        <button id="rainbowButton"><span class="material-icons-round md-24">auto_awesome</span> Rainbow</button>
+        <button id="eraserButton"><img src="./images/eraser-icon.png"> Erase</button>
         <div id="colorPickerDivWrapper">
             <span class="material-icons-round md-24">palette</span>
             <div id="colorPickerDiv"><input type="color" id="colorPicker" name="colorPicker" value="#f06292"></div>
         </div>
-        <button id="rainbowButton"><span class="material-icons-round md-24">auto_awesome</span> Rainbow</button>
-        <button id="eraserButton"><img src="./images/eraser-icon.png"> Erase</button>
+    </div>
+    <div id="toolTips">
+        <div id="newToolTip">Create a new blank canvas</div>
+        <div id="saveToolTip">Save current canvas to your computer</div>
+        <div id="gridToolTip">Toggle visibility of gridlines</div>
+        <div id="drawToolTip">Paint with your chosen colour</div>
+        <div id="rainbowToolTip">Paint with the rainbow brush</div>
+        <div id="eraseToolTip">Use the eraser tool</div>
+        <div id="colorPickerToolTip">Choose a colour to paint with</div>
+        <div id="recentColorsToolTip">Recently used colours</div>
     </div>
     <div id="drawingArea">
         <div id="pixelCanvas"></div>

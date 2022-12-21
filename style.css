@@ -40,7 +40,7 @@ body {
 #controlPanel {
     background-color: #666666;
     color: #FFFFFF;
-    padding: 10px;
+    padding: 7px 10px 0;
 }
 
 #controlPanel button {
@@ -58,7 +58,11 @@ body {
     cursor: pointer;
 }
 
-#eraserButton img {
+#rainbowButton {
+    margin-left: 1px;
+}
+
+#eraserButton img, #drawButton img {
     transform: translateY(3px);
     margin-right: 2px;
 }
@@ -78,7 +82,6 @@ body {
     background-color: #C7C7C7;
     display: inline;
     padding: 11px 10px 9px;
-    margin-right: 5px;
     line-height: 18px;
 }
 
@@ -97,6 +100,21 @@ input[type="color"]:hover {
     cursor: pointer;
 }
 
+/*control panel tooltips*/
+
+#toolTips {
+    background-color: #666666;
+    color: #FFFFFF;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 16px;
+    height: 19px;
+}
+
+#toolTips div {
+    display: none;
+}
+
 /*drawing area*/
 
 #drawingArea{
@@ -110,7 +128,7 @@ input[type="color"]:hover {
 }
 
 #pixelCanvas {
-    cursor:url(./images/pencil-icon.png),auto;
+    cursor:url(./images/brush-icon.png),auto;
     display: grid;
     width: fit-content;
     height: fit-content;
@@ -136,6 +154,7 @@ input[type="color"]:hover {
     color: #FFFFFF;
     padding: 10px;
     font-size: 12px;
+    line-height: 14px;
 }
 
 #footer a {
@@ -147,7 +166,7 @@ input[type="color"]:hover {
 
 #canvasSettings {
     position: fixed;
-    top: 119px;
+    top: 140px;
     z-index: 2;
     align-self: center;
     background-color: #FFFFFF;
