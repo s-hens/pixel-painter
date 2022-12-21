@@ -40,7 +40,7 @@ body {
 #controlPanel {
     background-color: #666666;
     color: #FFFFFF;
-    padding: 7px 10px 0;
+    padding: 7px 10px 10px;
 }
 
 #controlPanel button {
@@ -103,8 +103,8 @@ input[type="color"]:hover {
 /*control panel tooltips*/
 
 #toolTips {
-    background-color: #666666;
-    color: #FFFFFF;
+    background-color: #C7C7C7;
+    color: #000000;
     padding: 10px;
     font-size: 14px;
     line-height: 16px;
@@ -166,7 +166,7 @@ input[type="color"]:hover {
 
 #canvasSettings {
     position: fixed;
-    top: 140px;
+    top: 120px;
     z-index: 2;
     align-self: center;
     background-color: #FFFFFF;
