@@ -1,6 +1,6 @@
-# pixel-painter
+# PixelPainter
 
-### - [Live demo](https://s-hens.github.io/pixel-painter/)
+- [Live demo](https://s-hens.github.io/pixel-painter/)
 
 ## Summary:
 
