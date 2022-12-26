@@ -10,42 +10,38 @@ body {
     font-family: 'Recursive', sans-serif;
     user-select: none;
     -webkit-user-select: none;
+    color: #424949;
 }
 
 /*header*/
 
 #header {
-    background-color: #666666;
-    color: #FFFFFF;
-    padding: 10px 10px 0;
+    background-color: #BFC9CA;
+    padding: 14px 10px;
 }
 
 .title1 {
     font-size: 32px;
     font-weight: 300;
+    line-height: 32px;
 }
 
 .title2 {
     font-size: 32px;
     font-weight: 500;
-    background-color: #FFFFFF;
-    background: linear-gradient(90deg, rgba(240,98,146,1) 0%, rgba(255,224,130,1) 25%, rgba(197,225,165,1) 50%, rgba(144,202,249,1) 75%, rgba(179,157,219,1) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    line-height: 32px;
 }
 
 /*control panel*/
 
 #controlPanel {
-    background-color: #666666;
-    color: #FFFFFF;
-    padding: 7px 10px 0;
+    background-color: #BFC9CA;
+    padding: 0 10px;
 }
 
 #controlPanel button {
-    color: #000000;
-    background-color: #C7C7C7;
+    color: #424949;
+    background-color: #EAEDED;
     padding: 5px 10px 10px;
     border: 0;
     font-family: 'Recursive', sans-serif;
@@ -78,15 +74,13 @@ body {
 }
 
 #colorPickerDivWrapper {
-    color: #000000;
-    background-color: #C7C7C7;
+    background-color: #EAEDED;
     display: inline;
     padding: 11px 10px 9px;
     line-height: 18px;
 }
 
 #colorPickerDiv {
-    color: #000000;
     display: inline;
     height: 39px;
     border: none;
@@ -103,12 +97,12 @@ input[type="color"]:hover {
 /*control panel tooltips*/
 
 #toolTips {
-    background-color: #666666;
-    color: #FFFFFF;
-    padding: 10px;
+    background-color: #BFC9CA;
+    color: #424949;
+    padding: 14px 10px 10px 10px;
     font-size: 14px;
-    line-height: 16px;
-    height: 20px;
+    line-height: 14px;
+    height: 24px;
 }
 
 #toolTips div, #restOfTheControlPanel {
@@ -119,11 +113,9 @@ input[type="color"]:hover {
 
 #drawingArea{
     height: 100%;
-    padding: 0;
-    background-color: #C7C7C7;
+    padding: 20px;
+    background-color: #EAEDED;
     display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: scroll;
 }
 
@@ -132,12 +124,17 @@ input[type="color"]:hover {
     display: grid;
     width: fit-content;
     height: fit-content;
+    margin: auto;
+}
+
+.pixelCanvasBorder {
+    box-shadow: -1px -1px 0 #D5DBDB;
 }
 
 .gridCell {
     background-color: #FFFFFF;
-    border-left: 1px solid #C7C7C7;
-    border-bottom: 1px solid #C7C7C7;
+    border-bottom: 1px solid #D5DBDB;
+    border-right: 1px solid #D5DBDB;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -145,32 +142,51 @@ input[type="color"]:hover {
 
 .gridBorderHidden {
     border: 0;
+    box-shadow: none;
 }
 
 /*footer*/
 
 #footer {
-    background-color: #666666;
-    color: #FFFFFF;
+    background-color: #BFC9CA;
+    color: #424949;
     padding: 10px;
     font-size: 12px;
     line-height: 14px;
 }
 
 #footer a {
-    color: #C7C7C7;
+    color: #707B7C;
     font-size: 12px;
 }
 
 /*new canvas settings div*/
 
 #canvasSettings {
+    display: none;
+}
+
+.canvasSettingst1 {
     position: fixed;
-    top: 145px;
+    top: 0;
+    left: 0;
     z-index: 2;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(66, 73, 73, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.canvasSettingst2 {
+    width: fit-content;
+    height: fit-content;
     align-self: center;
     background-color: #FFFFFF;
-    border: 2px solid #666666;
+    border: 2px solid #424949;
     padding: 15px;
     font-size: 16px;
     line-height: 24px;
@@ -208,8 +224,8 @@ input[type="number"] {
 }
 
 #canvasSettings button {
-    color: #000000;
-    background-color: #C7C7C7;
+    color: #424949;
+    background-color: #EAEDED;
     padding: 5px;
     border: 0;
     font-family: 'Recursive', sans-serif;

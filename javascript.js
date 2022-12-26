@@ -99,6 +99,7 @@ function matchColor() {
 const colorPickerDivWrapper = document.getElementById("colorPickerDivWrapper");
 colorPickerDivWrapper.addEventListener("mouseover", colorPickerToolTipDisplay);
 colorPickerDivWrapper.addEventListener("mouseout", colorPickerToolTipHide);
+colorPickerDivWrapper.addEventListener("click", draw);
 
 const colorPickerToolTip = document.getElementById("colorPickerToolTip");
 
@@ -246,6 +247,7 @@ function toggleGrid() {
         toggleGridButton.innerHTML = (`<span class="material-icons-round md-24">grid_off</span> Grid`);
     }
     //toggle the actual gridlines
+    pixelCanvas.classList.toggle("gridBorderHidden");
     pixelCanvas.childNodes.forEach(cell => cell.classList.toggle("gridBorderHidden"));
 }
 
