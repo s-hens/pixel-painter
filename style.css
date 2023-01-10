@@ -16,32 +16,32 @@ body {
 /*header*/
 
 #header {
-    background-color: #BFC9CA;
-    padding: 12px 10px;
+    background-color: #C7C7C6;
+    padding: 10px;
 }
 
 .title1 {
     font-size: 32px;
-    font-weight: 300;
     line-height: 32px;
+    font-weight: 300;
 }
 
 .title2 {
     font-size: 32px;
-    font-weight: 500;
     line-height: 32px;
+    font-weight: 500;
 }
 
 /*control panel*/
 
 #controlPanel {
-    background-color: #BFC9CA;
+    background-color: #C7C7C6;
     padding: 0 10px;
 }
 
 #controlPanel button {
     color: #424949;
-    background-color: #EAEDED;
+    background-color: #EDECED;
     padding: 5px 10px 10px;
     border: 0;
     font-family: 'Recursive', sans-serif;
@@ -74,7 +74,7 @@ body {
 }
 
 #colorPickerDivWrapper {
-    background-color: #EAEDED;
+    background-color: #EDECED;
     display: inline;
     padding: 11px 10px 9px;
     line-height: 18px;
@@ -97,11 +97,11 @@ input[type="color"]:hover {
 /*control panel tooltips*/
 
 #toolTips {
-    background-color: #BFC9CA;
+    background-color: #C7C7C6;
     color: #424949;
-    padding: 14px 10px 10px 10px;
+    padding: 10px;
     font-size: 14px;
-    line-height: 14px;
+    line-height: 18px;
     height: 24px;
 }
 
@@ -113,10 +113,10 @@ input[type="color"]:hover {
 
 #drawingArea{
     height: 100%;
-    padding: 20px;
-    background-color: #EAEDED;
+    padding: 5px;
+    background-color: #EDECED;
     display: flex;
-    overflow: scroll;
+    overflow: auto;
 }
 
 #pixelCanvas {
@@ -133,8 +133,8 @@ input[type="color"]:hover {
 
 .gridCell {
     background-color: #FFFFFF;
-    border-bottom: 1px solid #D5DBDB;
-    border-right: 1px solid #D5DBDB;
+    border-bottom: 1px solid #D8D9D8;
+    border-right: 1px solid #D8D9D8;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -148,7 +148,7 @@ input[type="color"]:hover {
 /*footer*/
 
 #footer {
-    background-color: #BFC9CA;
+    background-color: #C7C7C6;
     color: #424949;
     padding: 10px;
     font-size: 12px;
@@ -175,7 +175,7 @@ input[type="color"]:hover {
     padding: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(66, 73, 73, 0.75);
+    background: rgba(75, 75, 75, 0.75);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -186,7 +186,6 @@ input[type="color"]:hover {
     height: fit-content;
     align-self: center;
     background-color: #FFFFFF;
-    border: 2px solid #424949;
     padding: 15px;
     font-size: 16px;
     line-height: 24px;
@@ -225,7 +224,7 @@ input[type="number"] {
 
 #canvasSettings button {
     color: #424949;
-    background-color: #EAEDED;
+    background-color: #EDECED;
     padding: 5px;
     border: 0;
     font-family: 'Recursive', sans-serif;
